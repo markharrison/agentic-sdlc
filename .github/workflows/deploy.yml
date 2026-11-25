@@ -27,9 +27,9 @@ jobs:
             exit 1
           fi
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: lts/*
+          node-version-file: package.json
           cache: npm
 
       - name: Install dependencies
@@ -38,8 +38,9 @@ jobs:
       - name: Install Chromium for PDF export
         run: npx playwright install --with-deps chromium
 
-      - name: Build
-        run: npm run build:pages
+      # `download: true` in slides.md makes `slidev build` also export dist/<exportFilename>.pdf
+      - name: Build site and PDF
+        run: npm run build
 
       - uses: actions/configure-pages@v5
 

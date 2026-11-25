@@ -1,14 +1,18 @@
 # The Agentic DevOps Stack
 
-An editable [Slidev](https://sli.dev) presentation, published at
-https://markharrison.uk/agentic-sdlc/.
+An editable [Slidev](https://sli.dev) presentation.
+[View the slides](https://markharrison.uk/agentic-sdlc/) |
+[Download the PDF](https://markharrison.uk/agentic-sdlc/agentic-sdlc-exported.pdf)
 
 The repository holds only the deck sources. Slidev itself (`node_modules`) and the
 Slidev agent skill (`.github/skills/`) are not committed; install them after cloning.
 
 ## After cloning
 
-Requires Node.js 22.22 or newer (the latest LTS is recommended). From the project folder:
+Install [Node.js 26.13.1 LTS](https://nodejs.org/en/download/archive/v26.13.1).
+GitHub Actions reads the version from [`package.json`](./package.json), and npm
+rejects other Node versions before installing dependencies or running project scripts.
+From the project folder:
 
 ```powershell
 npm install              # installs Slidev and the other dependencies into node_modules
@@ -52,24 +56,28 @@ Presenter view: http://localhost:3030/presenter.
 
 ```powershell
 npm run build
+npm run preview
 ```
 
-Creates the website in `dist`, ready for static hosting.
-`npm run build:pages` builds the same site for the `/agentic-sdlc/` path used on GitHub Pages.
+`npm run build` creates the website and PDF in `dist`, built for the `/agentic-sdlc/` path used on
+GitHub Pages. CI runs the same command. `npm run preview` serves `dist` locally at
+http://localhost:4173/agentic-sdlc/ so you can check the production build before pushing.
 The deck uses hash routing (`/agentic-sdlc/#/3`), so refreshing any slide works on static hosting.
 
 ## Publishing to GitHub Pages
 
 [.github/workflows/deploy.yml](./.github/workflows/deploy.yml) runs on every push to `main`,
 and can also be run manually from the Actions tab. It installs dependencies from public npm with
-`npm install`, installs Chromium for the PDF download, runs `npm run build:pages`, and deploys
+`npm install`, installs Chromium for the PDF download, runs `npm run build`, and deploys
 `dist` to GitHub Pages. The workflow never commits anything back to the repository.
 
 One-time setup in the GitHub repository: **Settings → Pages → Build and deployment → Source:
 GitHub Actions**. The user site's custom domain (`markharrison.uk`) applies to this project
 repository automatically, so no `CNAME` file is needed here.
 
-The published site includes a PDF download button (`download: true` in [slides.md](./slides.md)).
+The closing slide links directly to the PDF. You can also hover over the bottom-left corner
+of the published deck to reveal the **Download as PDF** button. `download` and `exportFilename`
+in [slides.md](./slides.md) control the PDF export.
 Note that a public repository also exposes the speaker notes in the slide sources.
 
 ## Export
@@ -173,7 +181,7 @@ and shows its four-step workflow alongside a [homepage screenshot](./slides/imag
 captured on November 25, 2026.
 The [source site's MIT license](./public/licenses/hve-core-LICENSE.txt) is included in builds.
 [Slide 12](./slides/12-closing.md) closes the deck with the Microsoft logo reused
-from the opening slide and a clickable contact email.
+from the opening slide, a PDF download link, and the standard email footer.
 
 ## Reusable components
 

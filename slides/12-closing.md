@@ -4,14 +4,21 @@ layout: content
 ---
 
 <script setup lang="ts">
+import DownloadIcon from '~icons/fluent/arrow-download-24-regular'
 import microsoftLogo from './images/microsoft-logo.svg'
+
+const pdfUrl = 'https://markharrison.uk/agentic-sdlc/agentic-sdlc-exported.pdf'
 </script>
 
 <div class="closing-contact">
   <img :src="microsoftLogo" alt="Microsoft" />
-  <p class="deck-email">
-    <a href="mailto:mark.harrison@microsoft.com">mark.harrison@microsoft.com</a>
-  </p>
+  <a class="closing-pdf" :href="pdfUrl" download target="_blank" rel="noopener">
+    <span class="closing-pdf-label">
+      <DownloadIcon aria-hidden="true" />
+      Download the slides (PDF)
+    </span>
+    <span class="closing-pdf-url">{{ pdfUrl }}</span>
+  </a>
 </div>
 
 <style scoped>
@@ -30,16 +37,24 @@ import microsoftLogo from './images/microsoft-logo.svg'
   height: auto;
 }
 
-.closing-contact .deck-email {
-  font-size: 32px;
-  font-weight: 300;
-  white-space: nowrap;
+.closing-contact .closing-pdf {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  border-bottom: 0;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.3;
+  text-decoration: none;
 }
 
-:global(.deck-content-slide:has(.closing-contact) .deck-footer) {
-  right: 14px;
-  bottom: 12px;
-  color: #fff;
-  font-size: 10px;
+.closing-pdf-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.closing-pdf-url {
+  font-size: 20px;
 }
 </style>

@@ -30,11 +30,4 @@ import homepage from './images/awesome-copilot.png'
   height: auto;
   border: 1px solid #53616c;
 }
-
-:global(.deck-content-slide:has(.awesome-copilot) .deck-footer) {
-  right: 14px;
-  bottom: 12px;
-  color: #fff;
-  font-size: 10px;
-}
 </style>

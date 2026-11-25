@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "slidev slides.md --port 3030",
-    "build": "slidev build slides.md",
-    "build:pages": "slidev build slides.md --base /agentic-sdlc/ --out dist",
+    "build": "slidev build slides.md --base /agentic-sdlc/",
+    "preview": "vite preview --base /agentic-sdlc/ --open /agentic-sdlc/",
     "skills:install": "node -e \"require('fs').cpSync('node_modules/@slidev/cli/skills/slidev','.github/skills/slidev',{recursive:true,force:true});console.log('Slidev skill copied to .github/skills/slidev')\""
   },
   "dependencies": {
@@ -21,7 +21,11 @@
   "devDependencies": {
     "playwright-chromium": "^1.65.1"
   },
-  "engines": {
-    "node": ">=22.22.0"
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26.13.1",
+      "onFail": "error"
+    }
   }
 }

@@ -14,6 +14,7 @@ drawings:
 transition: fade
 routerMode: hash
 download: true
+exportFilename: agentic-sdlc-exported
 src: ./slides/01-title.md
 ---
 
