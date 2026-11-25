@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, shallowRef } from 'vue'
-import { resolveAssetUrl } from '@slidev/client/layoutHelper.ts'
+import { onMounted, ref, shallowRef } from 'vue'
 
 defineOptions({ inheritAttrs: false })
 
@@ -14,7 +13,6 @@ const props = withDefaults(defineProps<{
 
 const anchor = ref<HTMLElement | null>(null)
 const target = shallowRef<Element | null>(null)
-const imageUrl = computed(() => resolveAssetUrl(props.src))
 
 onMounted(() => {
   const layout = anchor.value?.closest('.slidev-layout')
@@ -27,7 +25,7 @@ onMounted(() => {
 <template>
   <Teleport :to="target ?? 'body'" :disabled="!target">
     <figure ref="anchor" class="photo-right" v-bind="$attrs">
-      <img :src="imageUrl" :alt="alt" :style="{ objectPosition: position }">
+      <img :src="props.src" :alt="alt" :style="{ objectPosition: position }">
       <figcaption v-if="$slots.default">
         <slot />
       </figcaption>
