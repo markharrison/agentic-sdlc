@@ -1,0 +1,650 @@
+:root {
+  --stack-background: #081f2b;
+  --stack-yellow: #ffcb00;
+  --stack-lime: #b0f000;
+  --stack-cyan: #00c8ef;
+  --deck-margin-x: 62px;
+  --deck-title-top: 26px;
+  --deck-content-top: 126px;
+}
+
+/* Keep Slidev's navigation auto-hidden even when it would normally be pinned. */
+#slide-container > div[class~="!opacity-100"]:has(> nav) {
+  opacity: 0 !important;
+}
+
+#slide-container > div[class~="!opacity-100"]:has(> nav):hover,
+#slide-container > div[class~="!opacity-100"]:has(> nav):focus-within {
+  opacity: 1 !important;
+}
+
+.slidev-layout,
+.slidev-slide-content {
+  background: var(--stack-background);
+}
+
+.slidev-layout.deck-standard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-align: left;
+}
+
+.deck-title {
+  position: absolute;
+  z-index: 3;
+  top: var(--deck-title-top);
+  right: var(--deck-margin-x);
+  left: var(--deck-margin-x);
+}
+
+.deck-title h1 {
+  margin: 0;
+  color: var(--stack-yellow);
+  font-size: 49px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -1.6px;
+}
+
+.deck-content {
+  position: absolute;
+  top: var(--deck-content-top);
+  right: var(--deck-margin-x);
+  bottom: 62px;
+  left: var(--deck-margin-x);
+  color: #d7dce0;
+  font-size: 30px;
+  line-height: 1.7;
+}
+
+.deck-footer {
+  position: absolute;
+  z-index: 3;
+  right: 24px;
+  bottom: 20px;
+  color: var(--stack-yellow);
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.deck-content p {
+  margin: 0 0 24px;
+  font-size: inherit;
+  line-height: inherit;
+  opacity: 1;
+}
+
+.deck-content .deck-email {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.3;
+}
+
+.deck-content .deck-email a {
+  color: #fff;
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+.deck-content ul,
+.deck-content ol {
+  margin: 16px 0;
+  padding-left: 36px;
+  list-style-position: outside;
+  line-height: 1.3;
+}
+
+.deck-content li {
+  margin: 0 0 6px;
+  padding-left: 0;
+  line-height: inherit;
+}
+
+.deck-content li > ul,
+.deck-content li > ol {
+  margin: 6px 0 0;
+  font-size: 0.85em;
+}
+
+.deck-content li:last-child,
+.deck-content li > p {
+  margin-bottom: 0;
+}
+
+.deck-content > :first-child {
+  margin-top: 0;
+}
+
+.deck-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 52px;
+}
+
+.deck-column {
+  min-width: 0;
+}
+
+.deck-column > :first-child {
+  margin-top: 0;
+}
+
+.deck-column-footer {
+  margin-top: 32px;
+}
+
+.deck-column-footer p {
+  margin: 0;
+}
+
+.deck-column-footer .bookend-link {
+  margin-top: 0;
+}
+
+.deck-standard.deck-diagram .deck-content {
+  inset: 0;
+}
+
+.deck-standard.deck-diagram .deck-title {
+  pointer-events: none;
+}
+
+.bookend-highlight {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 40px;
+  color: var(--stack-lime);
+  font-size: 30px;
+}
+
+.bookend-highlight .stack-icon {
+  width: 44px;
+  height: 44px;
+  flex-basis: 44px;
+}
+
+.bookend-link {
+  width: fit-content;
+  margin-top: 40px;
+  padding: 14px 24px;
+  border: 1px solid var(--stack-cyan);
+  border-radius: 12px;
+  background: #003c57;
+  color: #f7fafc;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.devops-stack {
+  position: relative;
+  width: 1440px;
+  height: 810px;
+  overflow: hidden;
+  color: #f7fafc;
+  background:
+    radial-gradient(ellipse at 42% 70%, #030c12 0, transparent 53%),
+    var(--stack-background);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.devops-foundation .foundation-pillars {
+  --foundation-pillar-gap: 24px;
+
+  position: absolute;
+  top: 367px;
+  right: var(--deck-margin-x);
+  bottom: 62px;
+  left: var(--deck-margin-x);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--foundation-pillar-gap);
+}
+
+.devops-foundation .foundation-pillar {
+  min-width: 0;
+  min-height: 0;
+  text-align: center;
+}
+
+.devops-foundation .foundation-pillar h2 {
+  margin: 0 0 8px;
+  color: var(--stack-yellow);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.devops-foundation .tool-card {
+  text-align: left;
+}
+
+.devops-foundation .tool-card-span-two {
+  width: calc(200% + var(--foundation-pillar-gap));
+}
+
+.devops-foundation .foundation-platform {
+  width: calc(500% + 4 * var(--foundation-pillar-gap));
+}
+
+.devops-foundation .foundation-surfaces {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px var(--foundation-pillar-gap);
+  align-items: start;
+}
+
+.devops-foundation .foundation-surfaces > .tool-card {
+  margin-bottom: 0;
+}
+
+.devops-foundation .copilot-surfaces {
+  grid-column: 1 / span 2;
+}
+
+.devops-foundation .plan-surfaces {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.devops-foundation .code-surfaces {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+}
+
+.devops-foundation .foundation-testing {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  min-width: 0;
+}
+
+.devops-foundation .foundation-operations {
+  display: grid;
+  grid-column: 4 / span 2;
+  grid-row: 1 / span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px var(--foundation-pillar-gap);
+  align-content: start;
+  min-width: 0;
+}
+
+.devops-foundation .foundation-azure-platform {
+  grid-column: 1 / span 2;
+  margin-bottom: 0;
+}
+
+.devops-foundation .foundation-azure-platform ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.devops-foundation .foundation-azure-platform li {
+  margin: 0;
+}
+
+.devops-foundation .foundation-monitoring {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.devops-foundation .agentic-label {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.devops-foundation .agent-layer {
+  z-index: 3;
+  right: var(--deck-margin-x);
+  left: var(--deck-margin-x);
+}
+
+.devops-foundation .agent-band,
+.devops-foundation .enterprise-card,
+.devops-foundation .developer-platform-card,
+.devops-foundation .governance-summary,
+.devops-foundation .governance-foundation {
+  border-radius: 10px;
+}
+
+.devops-foundation .enterprise-card,
+.devops-foundation .developer-platform-card,
+.devops-foundation .governance-summary,
+.devops-foundation .governance-foundation {
+  background: #263843;
+}
+
+.devops-foundation .agent-band {
+  background: linear-gradient(rgb(145 230 0 / 75%), rgb(120 189 0 / 75%));
+}
+
+.devops-foundation .governance-foundation {
+  position: absolute;
+  top: 523.5px;
+  right: var(--deck-margin-x);
+  left: var(--deck-margin-x);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  height: 222px;
+  padding: 18px 20px;
+  border: 1px solid #d5d9dc;
+  color: #c9ced1;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.governance-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.governance-heading .stack-icon {
+  width: 64px;
+  height: 64px;
+  flex-basis: 64px;
+}
+
+.governance-cards {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.governance-cards .tool-card {
+  min-height: 48px;
+  margin-bottom: 0;
+}
+
+.agent-layer {
+  position: absolute;
+  z-index: 1;
+  top: 237px;
+  right: 20px;
+  left: 44px;
+  height: 126px;
+}
+
+.agent-layer.slidev-vclick-target,
+.governance-foundation.slidev-vclick-target {
+  transition:
+    transform 850ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 450ms ease;
+}
+
+.agent-layer.slidev-vclick-hidden,
+.governance-foundation.slidev-vclick-hidden {
+  transform: translateX(-1480px);
+  opacity: 0;
+}
+
+.agent-band {
+  position: absolute;
+  inset: 0;
+  border: 1.5px dashed var(--stack-lime);
+  border-radius: 15px;
+  background: rgb(132 185 19 / 49%);
+}
+
+.agent-card {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  height: 55px;
+  padding: 6px 9px;
+  border: 4px solid transparent;
+  border-radius: 9px;
+  background:
+    linear-gradient(#004774, #004774) padding-box,
+    linear-gradient(110deg, var(--stack-lime), var(--stack-cyan)) border-box;
+  color: #c9d6e5;
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.12;
+  white-space: nowrap;
+}
+
+.agent-card .stack-icon {
+  width: 31px;
+  height: 31px;
+  flex: 0 0 31px;
+  color: #fff;
+}
+
+.workflow-agent {
+  top: 7px;
+  left: 14px;
+  width: 188px;
+  background:
+    linear-gradient(#005027, #005027) padding-box,
+    linear-gradient(110deg, var(--stack-lime), var(--stack-cyan)) border-box;
+}
+
+.custom-agents {
+  top: 5px;
+  left: 368px;
+  width: 190px;
+}
+
+.partner-agents {
+  top: 5px;
+  left: 564px;
+  width: 276px;
+  gap: 7px;
+}
+
+.partner-agents .stack-icon {
+  width: 37px;
+  height: 37px;
+  flex-basis: 37px;
+}
+
+.coding-agent { top: 62px; left: 230px; width: 188px; }
+.review-agent { top: 62px; left: 424px; width: 188px; }
+.quality-agent { top: 62px; left: 618px; width: 188px; }
+.security-agent { top: 62px; left: 812px; width: 188px; }
+.sre-agent { top: 62px; right: 20px; width: 188px; }
+
+.agent-connections {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+}
+
+.agent-connections.slidev-vclick-target {
+  transition: opacity 550ms ease, transform 550ms ease;
+}
+
+.agent-connections.slidev-vclick-hidden {
+  transform: translateY(-12px);
+}
+
+.agentic-label,
+.integrations {
+  border: 3px solid transparent;
+  border-radius: 20px;
+}
+
+.agentic-label {
+  position: absolute;
+  top: 110px;
+  left: 606px;
+  display: grid;
+  width: 238px;
+  height: 45px;
+  place-items: center;
+  background:
+    linear-gradient(#0b3539, #0b3539) padding-box,
+    linear-gradient(100deg, var(--stack-lime), var(--stack-cyan)) border-box;
+  font-size: 24px;
+}
+
+.connection-lines {
+  position: absolute;
+  inset: 0;
+  width: 1440px;
+  height: 810px;
+  overflow: visible;
+}
+
+.arrow-halo {
+  stroke: #00beff;
+  stroke-width: 13px;
+}
+
+.arrow-shaft {
+  stroke: var(--stack-lime);
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.connection-stems {
+  stroke: #84be08;
+  stroke-width: 1.5px;
+}
+
+.connection-dots {
+  fill: var(--stack-lime);
+}
+
+.integrations {
+  position: absolute;
+  top: 120px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 246px;
+  height: 62px;
+  padding: 8px 20px 8px 25px;
+  background:
+    linear-gradient(#004774, #004774) padding-box,
+    linear-gradient(100deg, var(--stack-lime), var(--stack-cyan)) border-box;
+  font-size: 24px;
+}
+
+.integrations.slidev-vclick-target {
+  transition: opacity 450ms ease, transform 650ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.integrations.slidev-vclick-hidden {
+  transform: translateX(280px);
+}
+
+.mcp-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mcp-mark .stack-icon {
+  width: 34px;
+  height: 34px;
+  flex-basis: 34px;
+}
+
+.mcp-mark small {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tool-columns {
+  position: absolute;
+  top: 367px;
+  right: 16px;
+  left: 62px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: 8px;
+}
+
+.tool-column {
+  min-width: 0;
+}
+
+.devops-stack .phase-title {
+  height: 51px;
+  margin: 0;
+  padding: 0 6px;
+  color: #d7dce0;
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+.tool-card {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-sizing: border-box;
+  min-height: 46px;
+  margin-bottom: 12px;
+  padding: 5px 7px;
+  border: 1px solid #d5d9dc;
+  border-radius: 6px;
+  background: #171e24;
+  color: #bcc3cd;
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.15px;
+}
+
+.tool-card > span {
+  min-width: 0;
+}
+
+.stack-icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  vertical-align: middle;
+  filter: brightness(0) invert(1);
+}
+
+.platform-card {
+  min-height: 106px;
+  align-items: flex-start;
+  padding-top: 9px;
+  border-radius: 12px;
+}
+
+.platform-card > div {
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.platform-card small {
+  display: block;
+  margin-top: 9px;
+  font-size: 10px;
+  line-height: 1.15;
+  letter-spacing: -0.1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .devops-stack .slidev-vclick-target {
+    transition: none;
+  }
+}

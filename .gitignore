@@ -1,0 +1,34 @@
+# Slidev tooling - restored with 
+pm install
+node_modules/
+
+# Agent skills - restored with 
+pm run skills:install
+.github/skills/
+
+# Build output and caches
+dist/
+.slidev/
+.vite/
+*.local
+
+# Local exports (the published site builds its own PDF)
+*.pdf
+*.pptx
+*.png.export/
+slides-export/
+
+# Logs
+npm-debug.log*
+*.log
+
+# Secrets - registry tokens belong in your user ~/.npmrc, never here
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
