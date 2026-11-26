@@ -7,6 +7,9 @@
     <main class="deck-content">
       <slot />
     </main>
-    <footer class="deck-footer">mark.harrison@microsoft.com</footer>
+    <footer class="deck-footer">
+      <slot name="footer-left" />
+      <span class="deck-footer-email">mark.harrison@microsoft.com</span>
+    </footer>
   </div>
 </template>

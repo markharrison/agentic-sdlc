@@ -17,28 +17,30 @@ import hands from './images/hands.jpg'
 
 <div class="not-just-for-developers">
   <p>
-    GitHub Agents can adopt various personas by dynamically changing their
-    behavior, communication style, knowledge focus, and decision-making
-    strategies to suit specific user needs, organizational contexts, or
-    workflow requirements.
+    GitHub agents can help anyone involved in shaping, building, operating or
+    improving software.
   </p>
 
   <ul>
-    <li>Developers</li>
-    <li>Testers/QA Engineers</li>
-    <li>DevOps/Automation Engineers</li>
-    <li>Data Engineers</li>
-    <li>Database Administrators (DBAs)</li>
-    <li>Scientific Researchers / Data Scientists</li>
-    <li>Security Professionals</li>
-    <li>Trainers</li>
-    <li>Technical Writers</li>
-    <li>Designers (UI/UX), Accessibility</li>
-    <li>Citizen Devs e.g. Civil / Mechanical Engineers</li>
+    <li>Accessibility Specialists</li>
     <li>Architects</li>
-    <li>Product Managers</li>
+    <li>Business Analysts</li>
+    <li>Business Owners / Stakeholders</li>
+    <li>Citizen Developers (e.g. Civil Engineers, Mechanical Engineers, Scientists, Researchers, ... )</li>
+    <li>Data Engineers / Data Scientists</li>
+    <li>Database Administrators (DBAs)</li>
+    <li>Designers (UI/UX)</li>
+    <li>Developers</li>
+    <li>DevOps/Automation Engineers</li>
     <li>Integration Specialists</li>
-    <li>Accessibility Compliance Team</li>
+    <li>IT Operations</li>
+    <li>Product Owners / Managers</li>
+    <li>Security Professionals</li>
+    <li>Service Desk / Customer Support</li>
+    <li>Site Reliability Engineers</li>
+    <li>Technical Writers</li>
+    <li>Testers / QA Engineers</li>
+    <li>Trainers</li>
   </ul>
 </div>
 
@@ -61,8 +63,8 @@ import hands from './images/hands.jpg'
   margin: 0;
   padding-left: 34px;
   list-style-type: disc;
-  font-size: 21px;
-  line-height: 1.38;
+  font-size: 19px;
+  line-height: 1.25;
 }
 
 .not-just-for-developers li {

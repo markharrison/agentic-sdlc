@@ -75,7 +75,7 @@ One-time setup in the GitHub repository: **Settings → Pages → Build and depl
 GitHub Actions**. The user site's custom domain (`markharrison.uk`) applies to this project
 repository automatically, so no `CNAME` file is needed here.
 
-The closing slide links directly to the PDF. You can also hover over the bottom-left corner
+The closing slide links directly to the PDF in its lower-left footer. You can also hover over the bottom-left corner
 of the published deck to reveal the **Download as PDF** button. `download` and `exportFilename`
 in [slides.md](./slides.md) control the PDF export.
 Note that a public repository also exposes the speaker notes in the slide sources.
@@ -126,7 +126,8 @@ layout: content
 My slide content.
 ```
 
-For two columns, add `::right::` and optionally `::footer::`.
+For two columns, add `::right::` and optionally `::footer::`. On `content` slides,
+use `::footer-left::` for optional content opposite the email.
 All layouts share [SlideFrame.vue](./layouts/SlideFrame.vue) for the title/content
 structure and email footer.
 

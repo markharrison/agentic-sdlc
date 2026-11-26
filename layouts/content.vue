@@ -8,5 +8,8 @@ import SlideFrame from './SlideFrame.vue'
       <slot name="title" />
     </template>
     <slot />
+    <template #footer-left>
+      <slot name="footer-left" />
+    </template>
   </SlideFrame>
 </template>
