@@ -30,7 +30,6 @@ jobs:
       - name: Install Chromium for PDF export
         run: npx playwright install --with-deps chromium
 
-      # `download: true` in slides.md makes `slidev build` also export dist/<exportFilename>.pdf
       - name: Build site and PDF
         run: npm run build
 
