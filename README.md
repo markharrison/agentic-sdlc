@@ -2,7 +2,8 @@
 
 An editable [Slidev](https://sli.dev) presentation.
 [View the slides](https://markharrison.uk/agentic-sdlc/) |
-[Download the PDF](https://markharrison.uk/agentic-sdlc/agentic-sdlc-exported.pdf)
+[Download the PDF](https://markharrison.uk/agentic-sdlc/agentic-sdlc-exported.pdf) |
+[Download the PowerPoint](https://markharrison.uk/agentic-sdlc/agentic-sdlc-exported.pptx)
 
 The repository holds only the deck sources. Slidev itself (`node_modules`) and the
 Slidev agent skill (`.github/skills/`) are not committed; install them after cloning.
@@ -25,21 +26,14 @@ always matches the Slidev version. Re-run it after upgrading Slidev.
 
 ### npm registry
 
-No registry switching is needed. The repo's [.npmrc](./.npmrc) only sets
-`omit-lockfile-registry-resolved=true`, so `package-lock.json` records package versions and
-integrity hashes but no registry URLs. Each machine installs from its own configured registry:
+No registry switching is needed. The repo's [.npmrc](./.npmrc) only sets `package-lock=false`,
+so no lockfile is created or committed. Each machine installs from its own configured registry:
 
 - **Locally**, npm uses the registry in your user `~/.npmrc` (`%USERPROFILE%\.npmrc` on Windows),
   for example a corporate mirror such as `https://packagefeedproxy.microsoft.io/npm/`.
 - **GitHub Actions** has no user `.npmrc`, so it uses the public registry, https://registry.npmjs.org.
 
-Rules to keep this working:
-
-- Put registry and auth token settings in your **user** `~/.npmrc`, never in the repo `.npmrc`.
-- Commit the `package-lock.json` that `npm install` produces. The deploy workflow fails
-  if the lockfile contains registry URLs (such as `pkgs.visualstudio.com`), which happens
-  only if npm ran without the repo `.npmrc`. To fix it, run `npm install` in this folder
-  and commit the lockfile.
+Put registry and auth token settings in your **user** `~/.npmrc`, never in the repo `.npmrc`.
 
 ## Run
 
@@ -68,14 +62,16 @@ The deck uses hash routing (`/agentic-sdlc/#/3`), so refreshing any slide works 
 
 [.github/workflows/deploy.yml](./.github/workflows/deploy.yml) runs on every push to `main`,
 and can also be run manually from the Actions tab. It installs dependencies from public npm with
-`npm install`, installs Chromium for the PDF download, runs `npm run build`, and deploys
+`npm install`, installs Chromium for the exports, runs `npm run build` (site and PDF), then
+`npm run export:pptx` (editable PowerPoint, `agentic-sdlc-exported.pptx`), and deploys
 `dist` to GitHub Pages. The workflow never commits anything back to the repository.
 
 One-time setup in the GitHub repository: **Settings → Pages → Build and deployment → Source:
 GitHub Actions**. The user site's custom domain (`markharrison.uk`) applies to this project
 repository automatically, so no `CNAME` file is needed here.
 
-The closing slide links directly to the PDF in its lower-left footer. You can also hover over the bottom-left corner
+Slides 2, 11, and 12 link directly to the PDF in their lower-left footer, with a QR code above the link.
+You can also hover over the bottom-left corner
 of the published deck to reveal the **Download as PDF** button. `download` and `exportFilename`
 in [slides.md](./slides.md) control the PDF export.
 Note that a public repository also exposes the speaker notes in the slide sources.
@@ -92,11 +88,13 @@ Then export to PDF or PowerPoint:
 
 ```powershell
 npx slidev export slides.md --output slides.pdf
-npx slidev export slides.md --format pptx --output slides.pptx
+npm run export:pptx   # editable PowerPoint in dist (run after npm run build, which clears dist)
 ```
 
 Add `--with-clicks` to the PDF command to include each build as a separate page.
-PowerPoint exports contain slide images; animations are not retained.
+The PowerPoint export rebuilds slides as native shapes with editable text, one slide per slide.
+SVGs (icons, QR codes, diagrams), gradients, and animations stay as pictures or are dropped,
+and fonts (Segoe UI, Nunito Sans, Consolas) are named, not embedded.
 
 ## Layouts
 

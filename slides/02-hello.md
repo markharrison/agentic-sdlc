@@ -32,11 +32,16 @@ import avatar from './images/avatar.png'
   alt="Octocat avatar wearing a Hornets GitHub Copilot shirt."
 />
 
+::footer-left::
+
+<SlideDownload show-qr />
+
 <style scoped>
 .hello-copy {
   width: 450px;
   max-width: 100%;
   padding-top: 40px;
+  color: #fff;
 }
 
 .hello-copy p {

@@ -22,3 +22,7 @@ import fireworks from './images/fireworks.jpg'
 <p class="deck-email">
   <a href="mailto:mark.harrison@microsoft.com">mark.harrison@microsoft.com</a>
 </p>
+
+::footer-left::
+
+<SlideDownload show-qr />

@@ -27,11 +27,14 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Install Chromium for PDF export
+      - name: Install Chromium for PDF and PowerPoint export
         run: npx playwright install --with-deps chromium
 
       - name: Build site and PDF
         run: npm run build
+
+      - name: Export editable PowerPoint
+        run: npm run export:pptx
 
       - uses: actions/configure-pages@v5
 
