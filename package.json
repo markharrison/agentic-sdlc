@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "slidev slides.md --port 3030",
     "build": "slidev build slides.md --base /agentic-sdlc/",
-    "export:pptx": "slidev export slides.md --format pptx-editable --with-clicks=false --output dist/agentic-sdlc-exported.pptx",
+    "export:pdf": "slidev export slides.md --output dist/agentic-sdlc-exported.pdf",
+    "export:pptx": "slidev export slides.md --format pptx-editable --with-clicks --output dist/agentic-sdlc-exported.pptx",
     "preview": "vite preview --base /agentic-sdlc/ --open /agentic-sdlc/",
     "skills:install": "node -e \"require('fs').cpSync('node_modules/@slidev/cli/skills/slidev','.github/skills/slidev',{recursive:true,force:true});console.log('Slidev skill copied to .github/skills/slidev')\""
   },
