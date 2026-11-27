@@ -13,7 +13,7 @@ import homepage from './images/hve-core.png'
 
 ::default::
 
-<div class="hve-core">
+<div>
   <p class="deck-email">
     <a href="https://microsoft.github.io/hve-core/" target="_blank" rel="noopener noreferrer">https://microsoft.github.io/hve-core/</a>
   </p>
@@ -47,7 +47,7 @@ import homepage from './images/hve-core.png'
       </div>
     </li>
   </ol>
-  <img :src="homepage" alt="HVE Core homepage showing featured resources for its Hyper Velocity Engineering workflow." />
+  <img class="deck-screenshot" :src="homepage" alt="HVE Core homepage showing featured resources for its Hyper Velocity Engineering workflow." />
 </div>
 
 <style scoped>
@@ -99,15 +99,5 @@ import homepage from './images/hve-core.png'
   color: #9dcaff;
   font-family: Consolas, "Liberation Mono", monospace;
   font-size: 18px;
-}
-
-.hve-core img {
-  position: absolute;
-  top: -24px;
-  right: 20px;
-  display: block;
-  width: 650px;
-  height: auto;
-  border: 1px solid #53616c;
 }
 </style>

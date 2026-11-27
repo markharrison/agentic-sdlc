@@ -53,9 +53,13 @@ src: ./slides/10-hyper-velocity-engineering.md
 ---
 
 ---
-src: ./slides/11-demos.md
+src: ./slides/11-custom-agents-lab.md
 ---
 
 ---
-src: ./slides/12-closing.md
+src: ./slides/12-demos.md
+---
+
+---
+src: ./slides/13-closing.md
 ---
