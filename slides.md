@@ -1,10 +1,9 @@
 ---
 theme: default
-title: The Agentic DevOps Stack
+title: Agentic SDLC
 titleTemplate: '%s'
 info: |
-  An editable, multi-file presentation of the Agentic DevOps Stack.
-  The five-pillar diagram has ten click-controlled animation steps.
+  An editable, multi-file presentation of the Agentic SDLC.
 author: ""
 colorSchema: dark
 aspectRatio: 16/9

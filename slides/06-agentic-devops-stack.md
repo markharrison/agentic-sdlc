@@ -86,7 +86,7 @@ clicks: 10
       <div v-show="$clicks >= 2" class="foundation-platform">
         <div v-click="2" class="tool-card enterprise-card" role="group" aria-label="GitHub Enterprise: AI Powered Development and Advanced Security across all five pillars"><StackIcon name="github" /><span>GitHub Enterprise: AI Powered Development and Advanced Security</span></div>
         <div v-show="$clicks >= 3 && $clicks < 5" v-click="3" class="foundation-surfaces" role="group" aria-label="Copilot surfaces and development environments">
-          <div class="tool-card copilot-surfaces" role="group" aria-label="GitHub Copilot surfaces across Plan &amp; Design and Code"><StackIcon name="copilot" /><span>GitHub Copilot surfaces (CLI/App|Mobile|Web)</span></div>
+          <div class="tool-card copilot-surfaces" role="group" aria-label="GitHub Copilot surfaces across Plan &amp; Design and Code"><StackIcon name="copilot" /><span>GitHub Copilot surfaces (CLI|App|Mobile|Web)</span></div>
           <div class="plan-surfaces">
             <div class="tool-card"><StackIcon name="microsoft-copilot" /><span>Microsoft Copilot</span></div>
             <div v-show="$clicks >= 4" v-click="4" class="tool-card"><StackIcon name="boards" /><span>Azure Boards</span></div>
